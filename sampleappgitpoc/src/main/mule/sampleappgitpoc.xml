@@ -7,10 +7,12 @@ http://www.mulesoft.org/schema/mule/http http://www.mulesoft.org/schema/mule/htt
 http://www.mulesoft.org/schema/mule/ee/core http://www.mulesoft.org/schema/mule/ee/core/current/mule-ee.xsd">
 	<flow name="sampleappgitpocFlow" doc:id="634cec79-745e-43b2-936e-071e2119c6bc" >
 		<http:listener doc:name="Listener" doc:id="e88811fb-8cf4-4498-823e-f399dafbd243" config-ref="HTTP_Listener_config" path="/hello"/>
+		<logger level="INFO" doc:name="Start" doc:id="fd6b394c-eeed-49fd-a566-4b495e95c02f" message="Start "/>
 		<ee:transform doc:name="Transform Message" doc:id="b9d2c59f-df6e-4b7a-a6d7-dce436074fc9" >
 			<ee:message >
 				<ee:set-payload resource="/dwl/hello.dwl" />
 			</ee:message>
 		</ee:transform>
+		<logger level="INFO" doc:name="Start" doc:id="d4527c5b-ae93-4d09-a37e-d89232a275ac" />
 	</flow>
 </mule>
